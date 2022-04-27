@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OnBoardingAssg</string>
+    <string name="get_started">Get Started</string>
+    <string name="welcome_to_home">Welcome to Home</string>
+</resources>
