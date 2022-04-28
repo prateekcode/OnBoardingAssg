@@ -2,4 +2,10 @@
     <string name="app_name">OnBoardingAssg</string>
     <string name="get_started">Get Started</string>
     <string name="welcome_to_home">Welcome to Home</string>
+
+    <string name="boarding_msg_1">Simple popular app for the audience who loves memes</string>
+    <string name="boarding_msg_2">Subscribe any content that you like the most</string>
+    <string name="boarding_msg_3">Post your own content over there and see the reaction of people</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
 </resources>

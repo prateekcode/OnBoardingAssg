@@ -20,7 +20,7 @@ import co.riek.onboardingassg.adapter.BoardingItemAdapter;
 import co.riek.onboardingassg.databinding.ActivityOnboardingBinding;
 import co.riek.onboardingassg.model.BoardingItemModel;
 
-public class OnBoardingActivity extends AppCompatActivity {
+public class OnBoardingActivity extends BaseActivity {
 
     private ActivityOnboardingBinding binding;
     private final ArrayList<BoardingItemModel> boardingItemList = new ArrayList<>();
@@ -32,14 +32,13 @@ public class OnBoardingActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         initUI();
         animateButton();
-        makeStatusBarTransparent();
     }
 
 
     private void initUI() {
-        BoardingItemModel item1 = new BoardingItemModel(AppCompatResources.getDrawable(this, R.drawable.girl_social), "Simple popular app for the audience who loves memes");
-        BoardingItemModel item2 = new BoardingItemModel(AppCompatResources.getDrawable(this, R.drawable.boy_girl), "Subscribe any content that you like the most");
-        BoardingItemModel item3 = new BoardingItemModel(AppCompatResources.getDrawable(this, R.drawable.man_working), "Post your own content over there and see the reaction of people");
+        BoardingItemModel item1 = new BoardingItemModel(AppCompatResources.getDrawable(this, R.drawable.girl_social), getString(R.string.boarding_msg_1));
+        BoardingItemModel item2 = new BoardingItemModel(AppCompatResources.getDrawable(this, R.drawable.boy_girl), getString(R.string.boarding_msg_2));
+        BoardingItemModel item3 = new BoardingItemModel(AppCompatResources.getDrawable(this, R.drawable.man_working), getString(R.string.boarding_msg_3));
         boardingItemList.add(item1);
         boardingItemList.add(item2);
         boardingItemList.add(item3);
@@ -59,11 +58,4 @@ public class OnBoardingActivity extends AppCompatActivity {
         });
     }
 
-
-    private void makeStatusBarTransparent() {
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        Window window = getWindow();
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(Color.TRANSPARENT);
-    }
 }

@@ -1,16 +1,21 @@
 package co.riek.onboardingassg.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 
-import co.riek.onboardingassg.R;
+import co.riek.onboardingassg.databinding.ActivityHomeBinding;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
+
+    private ActivityHomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.appCompatTextView.setOnClickListener(view -> {
+            startActivity(new Intent(this, OnBoardingActivity.class));
+        });
     }
 }
